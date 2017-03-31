@@ -165,8 +165,9 @@ def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = Fals
             del d[t]
         else:
             try:
-                print(d.data_element(tag).value)
+                #print(d.data_element(tag).value)
                 d.data_element(tag).value = '?'
+                print(d.data_element(tag).value)
             except:
                 missed.append(tag)
 
@@ -180,6 +181,9 @@ def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = Fals
 
     #d.PatientBirthDate =  strTimeProp(str(int(d.PatientBirthDate)), str(int(d.PatientBirthDate)+1010000), '%m%d%Y', np.random.random())
     #d.ContentDate = strTimeProp(str(int(d.PatientBirthDate)), str(int(d.PatientBirthDate)+5000000), '%m%d%Y', np.random.random())
-
+    
+    if dcm.rfind('/')!=-1:
+          name = dcm[dcm.rfind('/')+1:]
+    d.save_as(output_path+name)
     return d
 

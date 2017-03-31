@@ -89,7 +89,7 @@ def dicom_crop(dicom_name, output_path=''):
           name = name[name.rfind('/')+1:]
         print(name)
         img.save(output_path+name)
-        ds.pixel_array = jpg_image_to_array(output_path+name)
+        ds.pixel_array = np.fromstring(im.tobytes(), dtype=np.uint8)
     else:
         ds.pixel_array = '?'
 

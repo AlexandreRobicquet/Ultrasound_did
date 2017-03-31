@@ -83,7 +83,7 @@ def dicom_crop(dicom_name, output_path=''):
 
     img = img.resize((int(round(X*W)), int(round(Y*H))), Image.ANTIALIAS)
 
-    if pytesseract.image_to_string(Image.open(img)).find('Admission')==-1:
+    if pytesseract.image_to_string(img).find('Admission')==-1:
         name  = dicom_name[:-4]+'jpg'
         img.save(output_path+name)
         ds.pixel_array = jpg_image_to_array(img)
@@ -149,7 +149,8 @@ def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = Fals
             'PerformedProcedureStepID', 'PatientName.FamilyName', 'PatientName.GivenName', 'PatientName.MiddleName','PatientName.NameSuffix',
             'Header.RequestAttributesSequenceIm.Item_1.ScheduledProcedureID','FillerOrderNumberOfImagingServiceRequest' ,'Header.ReferringPhysicianName.FamilyName',
             'Header.ReferringPhysicianName.GivenName','Header.OperatorName.FamilyName', 'Header.OperatorName.GivenName', 'Header.PatientBirthTime','PatientBirthTime',
-            'ReferringPhysicianName','InstitutionName','OperatorsName','IssuerOfPatientID','PerformedProtocolCodeSequence']
+            'ReferringPhysicianName','InstitutionName','OperatorsName','IssuerOfPatientID','PerformedProtocolCodeSequence','AccesionNumber','PatientAddress',
+            'PatientName','PerformingPhysicianName','PrivateCreator','InstitutionalDepartmentName','SecondaryCaptureDeviceID','StationName']
 
     d = dicom.read_file(input_path+dcm)
 

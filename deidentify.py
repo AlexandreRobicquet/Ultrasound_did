@@ -183,8 +183,8 @@ def deindentify_dicom(dcm, input_path='', output_path='',anon_tags=None, delete 
     #d.ContentDate = strTimeProp(str(int(d.PatientBirthDate)), str(int(d.PatientBirthDate)+5000000), '%m%d%Y', np.random.random())
     
     if dcm.rfind('/')!=-1:
-          name = dcm[dcm.rfind('/')+1:]
-    d.save_as(output_path+name)
+          dcm = dcm[dcm.rfind('/')+1:]
+    d.save_as(output_path+dcm)
     return d
   
 def deidentify(dcm, input_path='',output_path=''):

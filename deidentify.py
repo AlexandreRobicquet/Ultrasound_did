@@ -188,8 +188,16 @@ def deindentify_dicom(dcm, input_path='', output_path='',anon_tags=None, delete 
     return d
   
 def deidentify(dcm, input_path='',output_path=''):
-    deindentify_dicom(dcm, input_path, output_path)
-    dicom_crop(dcm, output_path, output_path)
+    ds = dicom.read_file(input_path+dicom_name)
+    try:
+      img = Image.fromarray(ds.pixel_array)
+      if pytesseract.image_to_string(img).find('Admission')==-1:
+        deindentify_dicom(dcm, input_path, output_path)
+        dicom_crop(dcm, output_path, output_path)
+      else:
+        pass
+    except:
+      pass
     
     
 

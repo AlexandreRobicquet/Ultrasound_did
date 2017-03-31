@@ -167,7 +167,7 @@ def deindentify_dicom(dcm, input_path='', output_path='',anon_tags=None, delete 
             try:
                 #print(d.data_element(tag).value)
                 d.data_element(tag).value = '?'
-                print(d.data_element(tag).value)
+                #print(d.data_element(tag).value)
             except:
                 missed.append(tag)
 

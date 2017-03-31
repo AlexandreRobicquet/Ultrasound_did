@@ -189,7 +189,7 @@ def deindentify_dicom(dcm, input_path='', output_path='',anon_tags=None, delete 
   
 def deidentify(dcm, input_path='',output_path=''):
     deindentify_dicom(dcm, input_path, output_path)
-    dicom_crop(dicom_name, output_path, output_path)
+    dicom_crop(dcm, output_path, output_path)
     
     
 

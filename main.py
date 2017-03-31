@@ -11,3 +11,6 @@ def main(input_path='../dicom_input/', output_path='../dicom_output/'):
     shutil.move(a,output_path+'Images/')
   for a in glob.glob(output_path+'*.dcm'):
     shutil.move(a,output_path+'dicom/')
+    
+if __name__ == '__main__':
+    main()

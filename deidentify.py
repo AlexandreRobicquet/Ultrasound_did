@@ -152,7 +152,7 @@ def deindentify_dicom(dcm, input_path='', output_path='',anon_tags=None, delete 
             'PerformedProcedureStepID', 'PatientName.FamilyName', 'PatientName.GivenName', 'PatientName.MiddleName','PatientName.NameSuffix',
             'Header.RequestAttributesSequenceIm.Item_1.ScheduledProcedureID','FillerOrderNumberOfImagingServiceRequest' ,'Header.ReferringPhysicianName.FamilyName',
             'Header.ReferringPhysicianName.GivenName','Header.OperatorName.FamilyName', 'Header.OperatorName.GivenName', 'Header.PatientBirthTime','PatientBirthTime',
-            'ReferringPhysicianName','InstitutionName','OperatorsName','IssuerOfPatientID','PerformedProtocolCodeSequence','PatientAddress',
+            'ReferringPhysicianName','RequestingService','InstitutionName','OperatorsName','IssuerOfPatientID','PerformedProtocolCodeSequence','PatientAddress',
             'PatientName','PerformingPhysicianName','PrivateCreator','InstitutionalDepartmentName','SecondaryCaptureDeviceID','StationName']
 
     d = dicom.read_file(input_path+dcm)

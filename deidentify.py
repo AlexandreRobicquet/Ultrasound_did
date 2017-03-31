@@ -84,9 +84,10 @@ def dicom_crop(dicom_name, output_path=''):
     img = img.resize((int(round(X*W)), int(round(Y*H))), Image.ANTIALIAS)
 
     if pytesseract.image_to_string(img).find('Admission')==-1:
-        name  = dicom_name[:-4]+'jpg'
+        name  = dicom_name[:-4]+'.jpg'
         if name.rfind('/')!=-1:
           name = name[name.rfind('/')+1:]
+        print(name)
         img.save(output_path+name)
         ds.pixel_array = jpg_image_to_array(img)
     else:

@@ -54,7 +54,7 @@ def strTimeProp(start, end, format, prop):
 
 
 
-def dicom_crop(dicom_name, output_path=''):
+def dicom_crop(dicom_name, input_path='', output_path=''):
     """
     INPUT:
         - dicome_name  (str) is the path + name of the dicom to Study
@@ -64,7 +64,7 @@ def dicom_crop(dicom_name, output_path=''):
 
     f the file is not properly decompressed, you will receive as an error"""
 
-    ds = dicom.read_file(dicom_name)
+    ds = dicom.read_file(input_path+dicom_name)
 
     xM = ds.SequenceOfUltrasoundRegions[0].RegionLocationMaxX1
     yM = ds.SequenceOfUltrasoundRegions[0].RegionLocationMaxY1
@@ -126,7 +126,7 @@ def deindentify_image(dicom_name):
 
 
 
-def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = False):
+def deindentify_dicom(dcm, input_path='', output_path='',anon_tags=None, delete = False):
 
     """ deindentify is a function use to return a deintify version of the inputed dicom.
 
@@ -186,4 +186,10 @@ def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = Fals
           name = dcm[dcm.rfind('/')+1:]
     d.save_as(output_path+name)
     return d
+  
+  def deidentify(dcm, input_path='',output_path=''):
+    deindentify_dicom(dcm, input_path, output_path)
+    dicom_crop(dicom_name, input_path=output_path, output_path)
+    
+    
 

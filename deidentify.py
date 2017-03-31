@@ -191,7 +191,7 @@ def deidentify(dcm, input_path='',output_path=''):
     ds = dicom.read_file(input_path+dcm)
     try:
       img = Image.fromarray(ds.pixel_array)
-      if pytesseract.image_to_string(img).find('Admission')==-1:
+      if pytesseract.image_to_string(img).find('Admission')==-1 or pytesseract.image_to_string(img).find('Physician')==-1:
         deindentify_dicom(dcm, input_path, output_path)
         dicom_crop(dcm, output_path, output_path)
       else:

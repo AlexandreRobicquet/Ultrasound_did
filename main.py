@@ -1,4 +1,4 @@
-from deindentify import *
+from deidentify import *
 import shutil
 import glob
 

@@ -149,7 +149,7 @@ def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = Fals
             'PerformedProcedureStepID', 'PatientName.FamilyName', 'PatientName.GivenName', 'PatientName.MiddleName','PatientName.NameSuffix',
             'Header.RequestAttributesSequenceIm.Item_1.ScheduledProcedureID','FillerOrderNumberOfImagingServiceRequest' ,'Header.ReferringPhysicianName.FamilyName',
             'Header.ReferringPhysicianName.GivenName','Header.OperatorName.FamilyName', 'Header.OperatorName.GivenName', 'Header.PatientBirthTime','PatientBirthTime',
-            'ReferringPhysicianName','InstitutionName','OperatorsName','IssuerOfPatientID','PerformedProtocolCodeSequence','AccesionNumber','PatientAddress',
+            'ReferringPhysicianName','InstitutionName','OperatorsName','IssuerOfPatientID','PerformedProtocolCodeSequence','PatientAddress',
             'PatientName','PerformingPhysicianName','PrivateCreator','InstitutionalDepartmentName','SecondaryCaptureDeviceID','StationName']
 
     d = dicom.read_file(input_path+dcm)
@@ -176,7 +176,7 @@ def deindentify(dcm, input_path='', output_path='',anon_tags=None, delete = Fals
         pass
 
     #d.PatientBirthDate =  strTimeProp(str(int(d.PatientBirthDate)), str(int(d.PatientBirthDate)+1010000), '%m%d%Y', np.random.random())
-    d.ContentDate = strTimeProp(str(int(d.PatientBirthDate)), str(int(d.PatientBirthDate)+5000000), '%m%d%Y', np.random.random())
+    #d.ContentDate = strTimeProp(str(int(d.PatientBirthDate)), str(int(d.PatientBirthDate)+5000000), '%m%d%Y', np.random.random())
 
     return d
 

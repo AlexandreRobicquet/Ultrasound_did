@@ -3,8 +3,8 @@ import shutil
 import glob
 
 def main(input_path='../dicom_input/', output_path='../dicom_output/'):
-  list = os.listdir(input_path)
-  for dcm in list:
+  LL = os.listdir(input_path)
+  for dcm in LL:
     deidentify(dcm, input_path, output_path)
   
   for a in glob.glob(output_path+'*.jpg'):

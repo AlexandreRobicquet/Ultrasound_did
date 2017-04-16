@@ -5,3 +5,4 @@ pytesseract==0.1.6
 Pillow==4.1.0
 cv2==1.0
 dicom==0.9.9.post1
+opencv-python

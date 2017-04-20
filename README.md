@@ -25,8 +25,8 @@ git clone ...
 ## Set-Up
 
 if you plan on not changing the code, create also in your Ultrasound folder 2 other folders: 
-- dicom input
-- dicom output
+- dicom_input
+- dicom_output
 
 ( you then end up with 3 folder inside the Ultrasound one)
 
@@ -40,5 +40,12 @@ $ sudo pip install -r requirement.txt
 
 (maybe some of them evolved or are missing, apologies)
 
+
 ## Run 
+
+```unix
+cd /Desktop/Ultrasound/Ultrasound_did
+python main.py
+```
+This will fill up completely the dicom_output file which is the only thing we will touch
 

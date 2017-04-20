@@ -16,7 +16,7 @@ sudo apt-get install git
 
 then clone folder wherever you want (in order to have some consistency, let's assume you do that on your Desktop)
 
-```ruby
+```ubuntu
 mkdir ~/Desktop/Ultrasound/
 cd ~/Desktop/Ultrasound
 git clone https://github.com/AlexandreRobicquet/Ultrasound_did.git

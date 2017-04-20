@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 
 """
-
 All rights reserved.
 Written by Alexandre Robicquet <robicquet.alexandre@gmail.com>, 2017
 
+
 """
+
 
 
 import sys
